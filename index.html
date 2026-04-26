@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajude quem não pode pedir</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                  url('https://images.unsplash.com/photo-1558788353-f76d92427f16');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 30px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 15px;
+      backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    h1 span {
+      color: #4CAF50;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      padding: 15px 40px;
+      font-size: 1.3rem;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #43a047;
+      transform: scale(1.05);
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* POPUP */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 999;
+    }
+
+    .popup img {
+      width: 250px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    .popup h2 {
+      font-size: 2rem;
+      color: #4CAF50;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Ajude <span>quem não pode pedir</span></h1>
+
+    <p>
+      Sua visita já faz a diferença.<br>
+      Este site exibe anúncios para se manter ativo, e essa receita ajuda
+      a apoiar animais que precisam.
+    </p>
+
+    <button class="btn" onclick="ajudar()">AJUDAR</button>
+
+    <div class="footer">
+      Juntos somos a voz deles 🐾
+    </div>
+  </div>
+
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1" alt="Cachorro fofo">
+    <h2>Obrigado ❤️</h2>
+  </div>
+
+  <script>
+    function ajudar() {
+      const popup = document.getElementById("popup");
+      popup.style.display = "flex";
+
+      // Recarrega após 2.5 segundos
+      setTimeout(() => {
+        location.reload();
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>
